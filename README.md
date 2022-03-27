@@ -47,11 +47,12 @@ We don't think it's fair to ask you to build something with a UI, as we know thi
 - If the best example of your work is something you've done at a company, it's okay to link to a live deployed version
 - If you can't link to anything, a screenshot is also fine
 
-**Answer**: _[Add a link to repo/website/screenshot here]_
+**Answer**: _[https://github.com/JahanU/bargain-web-scraper, https://github.com/JahanU/algorithm-visualizer, https://jahanu.github.io/MEAN-weather-app/]_
 
 **Task**: Tell us about the biggest challenge you faced in building the above.
 
-**Answer**: _[Write your answer here (300 words max)]_
+**Answer**: _[In terms of the Algorithm Visualiser project, the most important and difficult part was showcasing each iteration and action being performed in 'real-time' during the implementation of an algorithm. The final solution was easy to implement and scales well for every new algorithm added. The main idea was that the algorithm would run as normal, and for each 'action' (eg a swap in bubble sort) would be stored in an array with the related indexs (left, right, index) values. 
+After the sort and animation array was complete, I would pop each element containing the index values, and map each of the actions onto the array on the UI. Changing the size, colours and location of the bars would be performed in this animation function. ]_
 
 ## Submission
 

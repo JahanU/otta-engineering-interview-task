@@ -35,11 +35,7 @@ function getUserSimilarityScore(user1, user2, reactions, max) {
     return similarityScore;
 }
 
-async function getMaxUserSimilarityScore(reactions) {
-
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    console.log('max user: ', time);
+function getMaxUserSimilarityScore(reactions) {
 
     let users = new Set(reactions.map((row) => row.user_id));
     let [maxUser1,  maxUser2, max] = ['', '', 0];
@@ -98,11 +94,7 @@ function getCompanySimilarityScore(company1, company2, jobs, reactions, max) {
     return similarityScore;
 }
 
-async function getMaxCompanySimilarityScore(reactions, jobs) {
-
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    console.log('max company: ', time);
+function getMaxCompanySimilarityScore(reactions, jobs) {
 
     const companies = new Set(jobs.map((job) => job.company_id));
     let [maxCompany1, maxCompany2, max] = ['', '', 0];

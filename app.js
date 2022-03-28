@@ -49,7 +49,6 @@ function getMaxUserSimilarityScore(reactions) {
             }
         }
     }
-
     return { maxSimilarityScore: max, maxUser1: maxUser1, maxUser2: maxUser2 };
 }
 
@@ -76,7 +75,7 @@ function getCompanySimilarityScore(company1, company2, jobs, reactions, max) {
     for (let row of reactions) {
         // user likes jobs from company 1
         if (company1Jobs.has(row.job_id) && row.direction) {
-            map.set(row.user_id, false); // set key, value false for now
+            map.set(row.user_id, false); // init/set key
         }
         // user likes jobs from company 2
         if (company2Jobs.has(row.job_id) && row.direction) {

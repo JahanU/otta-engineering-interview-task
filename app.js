@@ -15,23 +15,21 @@ function getUserSimilarityScore(user1, user2, reactions, max) {
     let similarityScore = 0;
 
     let user1Jobs = reactions
-        .filter((row) => row.user_id === user1)
-        .map((row) => row);
+        .filter((row) => row.user_id === user1 && row.direction)
+        .map((row) => row.job_id);
     if (user1Jobs.length < max) return 0; // if user1 has less jobs than max, return 0 -> can't ever get higher similarity score
 
-   let user2Jobs = reactions
-        .filter((row) => row.user_id === user2)
-        .map((row) => row);   
+   let user2Jobs = new Set(reactions
+        .filter((row) => row.user_id === user2 && row.direction)
+        .map((row) => row.job_id));
     if (user2Jobs.length < max) return 0;
- 
-    for (let user1 of user1Jobs) {
-        for (let user2 of user2Jobs) {
-            if (user1.job_id === user2.job_id && user1.direction === user2.direction === true) {
-                similarityScore++;
-            }
+     
+    for (let user1Job of user1Jobs) {
+        if (user2Jobs.has(user1Job)) {
+            similarityScore++;
         }
     }
-
+        
     return similarityScore;
 }
 
@@ -51,6 +49,7 @@ function getMaxUserSimilarityScore(reactions) {
             }
         }
     }
+
     return { maxSimilarityScore: max, maxUser1: maxUser1, maxUser2: maxUser2 };
 }
 
@@ -120,14 +119,15 @@ async function main() {
         const reactions = res[1];
 
         // Task 1
-        getMaxUserSimilarityScore(reactions).then((res) => {
-            console.log(res);
-        });
+        let maxUserScore = getMaxUserSimilarityScore(reactions);
+        console.log(maxUserScore);
+        // { maxSimilarity: 813, maxUser1: '5193', maxUser2: '1791' },
 
         // Task 2
-        getMaxCompanySimilarityScore(reactions, jobs).then((res) => {
-            console.log(res);
-        });
+        let maxCompanyScore = getMaxCompanySimilarityScore(reactions, jobs);
+        console.log(maxCompanyScore);
+        //   { maxSimilarityScore: 160, maxCompany1: '92', maxCompany2: '124' }
+
     });
 }
 

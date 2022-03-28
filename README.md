@@ -58,9 +58,9 @@ After the sort and animation array was complete, I would pop each element contai
 
 Once you've completed all of the above tasks, make sure:
 
-- [ ] You've committed all of the code used, and your edited answers, to the `main` branch
-- [ ] You've pushed the changes to your repo
-- [ ] You add `XavKearney` and `billyotta` as contributors for your personal repo, and send a link to the repo in an email or Otta message to us
+- [x] You've committed all of the code used, and your edited answers, to the `main` branch
+- [x] You've pushed the changes to your repo
+- [x] You add `XavKearney` and `billyotta` as contributors for your personal repo, and send a link to the repo in an email or Otta message to us
 
 Good luck!
 # otta-engineering-interview-task

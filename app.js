@@ -121,7 +121,7 @@ async function main() {
         // Task 1
         let maxUserScore = getMaxUserSimilarityScore(reactions);
         console.log(maxUserScore);
-        // { maxSimilarity: 813, maxUser1: '5193', maxUser2: '1791' },
+        // { maxSimilarityScore: 408, maxUser1: '1791', maxUser2: '5193' }
 
         // Task 2
         let maxCompanyScore = getMaxCompanySimilarityScore(reactions, jobs);
